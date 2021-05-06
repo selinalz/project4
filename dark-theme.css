@@ -1,0 +1,4026 @@
+
+body{
+	background-color: black;
+}
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 2%;
+  width: 35%;
+  height: 10%;
+  border: 1px solid transparent;
+  border-radius: 30px;
+}
+
+.sun {
+  position: absolute;
+  top: 38%;
+  left: 6%;
+  color: white;
+  margin-left: 6px;
+  margin-top: 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  box-shadow: -8px 0 0 -3px currentColor,  8px 0 0 -3px currentColor,  0 -8px 0 -3px currentColor,  0 8px 0 -3px currentColor,  -6px -6px 0 -3px currentColor,  -6px 6px 0 -3px currentColor,  6px -6px 0 -3px currentColor,  6px 6px 0 -3px currentColor;
+  transform: scale(3);
+}
+
+.sun:hover{
+  transform: scale(3.5);
+}
+
+.print{
+  color: white;
+  position: absolute;
+  top: 32%;
+  left: 20%;
+  margin-left: 2px;
+  margin-top: 5px;
+  width: 15px;
+  height: 6px;
+  border: solid 1px currentColor;
+  border-radius: 1px 1px 0 0;
+  transform: scale(3);
+}
+
+.print:before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: -3px;
+  height: 13px;
+  width: 9px;
+  border: solid 1px currentColor;
+  background-color: black;
+}
+
+.print:after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: -1px;
+  width: 13px;
+  height: 3px;
+  border-top: solid 1px currentColor;
+  border-bottom: solid 1px currentColor;
+  background-color: black;
+}
+
+.print:hover{
+	transform: scale(3.5);
+}
+
+.refresh {
+  color: white;
+  position: absolute;
+  top: 35%;
+  left: 32%;
+  margin-left: 4px;
+  margin-top: 3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border-top: solid 1px currentColor;
+  border-bottom: solid 1px currentColor;
+  border-left: solid 1px transparent;
+  border-right: solid 1px currentColor;
+  transform: scale(3);
+}
+
+.refresh:before {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 10px;
+  width: 3px;
+  height: 3px;
+  border-top: solid 1px currentColor;
+  border-left: solid 1px currentColor;
+  -webkit-transform: rotate(-22.5deg);
+          transform: rotate(-22.5deg);
+}
+
+.refresh:hover{
+	transform: scale(3.5);
+}
+
+#result{
+	position: absolute;
+	top: -20%;
+  left: 45%;
+	font-family: 'Coming Soon', cursive;
+	font-size: 30px;
+	text-transform: uppercase;
+  color: white;
+}
+
+#keyboard{
+  position: absolute;
+  top: -20%;
+  left: 45%;
+  font-family: 'Coming Soon', cursive;
+  font-size: 30px;
+  text-transform: uppercase;
+  border: 1px solid black;
+  display: none;
+}
+
+@media print
+{    
+
+    .print{
+        display: none !important;
+    }
+
+    .refresh{
+        display: none !important;
+    }
+
+    #result{
+        display: none !important;
+    }
+
+    .box{
+      display: none !important;
+    }
+
+    .button-bg{
+      display: none !important;
+    }
+}
+
+.main{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	z-index: -1;
+}
+
+.text{
+	margin: 5%;
+	font-size: 20px;
+}
+
+@keyframes bloom{
+  0% { opacity: 0%; 
+       transform:rotate(-45deg); 
+  }
+  100% { opacity: 60%; }
+}
+
+@keyframes blooms{
+  0% { opacity: 0%; 
+       transform:rotate(-45deg); 
+  }
+  100% { opacity: 100%; }
+}
+
+.flower{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.8);
+}
+
+.petal_1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(-46deg);
+  background-color: white;
+  opactiy: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_1:after{
+   content:'';
+   position: absolute;
+   top: -20px;
+   left: -5px;
+   width: 110px;
+   height: 130px;
+   border-radius:100px 0;
+   transform:rotate(8deg);
+   border: 3px solid white;
+   opactiy: 60%;
+   z-index: -1;
+}
+
+.petal_2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(50deg);
+  background-color: white;
+  opactiy: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_2:after{
+   content:'';
+   position: absolute;
+   top: -20px;
+   left: -5px;
+   width: 110px;
+   height: 130px;
+   border-radius:100px 0;
+   transform:rotate(8deg);
+   border: 3px solid white;
+   opactiy: 60%;
+   z-index: -1;
+}
+
+.petal_3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(137deg);
+  background-color: white;
+  opactiy: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_3:after{
+   content:'';
+   position: absolute;
+   top: -20px;
+   left: -5px;
+   width: 110px;
+   height: 130px;
+   border-radius:100px 0;
+   transform:rotate(8deg);
+   border: 3px solid white;
+   opactiy: 60%;
+   z-index: -1;
+}
+
+.petal_4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(220deg);
+  background-color: white;
+  opactiy: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_4:after{
+   content:'';
+   position: absolute;
+   top: -20px;
+   left: -5px;
+   width: 110px;
+   height: 130px;
+   border-radius:100px 0;
+   transform:rotate(8deg);
+   border: 3px solid white;
+   opactiy: 60%;
+   z-index: -1;
+}
+
+.flower2{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(1);
+}
+
+.petal_one{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_two{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(36deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_three{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(72deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_four{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(108deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_five{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(144deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_six{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(180deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_seven{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(216deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_eight{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(252deg);
+  background-color: white;
+  opacity: 60%;   
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_nine{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(288deg);
+  background-color: white;
+  opacity: 60%; 
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal_ten{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(324deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower3{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.8);
+}
+
+ .petal-one{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petal-two{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(45deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2.5s linear;
+  animation-timing-function: ease-in-out;  
+}
+
+ .petal-three{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(90deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petal-four{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(135deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petal-five{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(180deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petal-six{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(225deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petal-seven{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(270deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petal-eight{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(315deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower4{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.9);
+}
+
+ .p1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(90deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;}
+
+.p3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(180deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-90deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower5{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.8);
+}
+
+.p-1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(30deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(60deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(90deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(120deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-6{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(150deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-7{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(180deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-8{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(210deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-9{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(240deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-10{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(270deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-11{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(300deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-12{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(330deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower6{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.7);
+}
+
+.p_1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(40deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(80deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3.5s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.p_4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(120deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(160deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_6{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(200deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_7{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(240deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_8{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(280deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3.5s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_9{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(320deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3.5s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.flower7{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.9);
+}
+
+.p_one{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_two{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_three{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(70deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_four{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(90deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_five{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(150deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_six{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(170deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_seven{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(220deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_eight{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(240deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_nine{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(290deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p_ten{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(310deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower8{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.8);
+}
+
+.p-one{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-two{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(50deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-three{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(100deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-four{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(150deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-five{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(200deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-six{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(250deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.p-seven{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(300deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower9{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.7);
+}
+
+.pone{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(-5deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pone:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   background-color: white;
+   opacity: 60%;
+}
+
+.ptwo{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(50deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.ptwo:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   background-color: white;
+   opacity: 60%;
+}
+
+.pthree{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(100deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pthree:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   background-color: white;
+   opacity: 60%;
+}
+
+.pfour{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(150deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pfour:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   background-color: white;
+   opacity: 60%;
+}
+
+.pfive{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(200deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pfive:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   background-color: white;
+   opacity: 60%;
+}
+
+.psix{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(250deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.psix:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   background-color: white;
+   opacity: 60%;
+}
+
+.pseven{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(300deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pseven:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   background-color: white;
+   opacity: 60%;
+}
+
+.flower10{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.8);
+}
+
+.pe1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:70px 10px;
+  transform-origin:0 100px;
+  transform:rotate(10deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:70px 10px;
+  transform-origin:0 100px;
+  transform:rotate(85deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:70px 10px;
+  transform-origin:0 100px;
+  transform:rotate(160deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:70px 10px;
+  transform-origin:0 100px;
+  transform:rotate(230deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:70px 10px;
+  transform-origin:0 100px;
+  transform:rotate(300deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower11{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(1.2);
+}
+
+.pe-1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(40deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(80deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(120deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(160deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-6{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(200deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-7{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(240deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-8{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(280deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-9{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(320deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower12{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.8);
+}
+
+.pe_1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(40deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(80deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(120deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(160deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_6{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(200deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_7{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(240deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_8{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(280deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_9{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(320deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_10{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(260deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 2s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower13{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(1);
+}
+
+.pe-one{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-one:before{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-20deg);
+  background-color: white;
+  opacity: 60%;
+}
+
+.pe-one:after{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: -25px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  background-color: white;
+  opacity: 60%;
+}
+
+.pe-two{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(70deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-two:before{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-20deg);
+  background-color: white;
+  opacity: 60%;
+}
+
+.pe-two:after{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: -25px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  background-color: white;
+  opacity: 60%;
+}
+
+.pe-three{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(140deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-three:before{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-20deg);
+  background-color: white;
+  opacity: 60%;
+}
+
+.pe-three:after{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: -25px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  background-color: white;
+  opacity: 60%;
+}
+
+.pe-four{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(210deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-four:before{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-20deg);
+  background-color: white;
+  opacity: 60%;
+}
+
+.pe-four:after{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: -25px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  background-color: white;
+  opacity: 60%;
+}
+
+.pe-five{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(280deg);
+  background-color: white;
+  opacity: 60%;
+  animation: bloom 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe-five:before{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-20deg);
+  background-color: white;
+  opacity: 60%;
+}
+
+.pe-five:after{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: -25px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  background-color: white;
+  opacity: 60%;
+}
+
+.flower14{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.9);
+}
+
+.petal{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(-46deg);
+  border: 3px solid white;
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal:after{
+   content:'';
+   position: absolute;
+   top: -20px;
+   left: -5px;
+   width: 110px;
+   height: 130px;
+   border-radius:100px 0;
+   transform:rotate(8deg);
+   border: 3px solid white;
+   z-index: -1;
+}
+
+.petal2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(50deg);
+  border: 3px solid white;
+  animation: bloom 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal2:after{
+   content:'';
+   position: absolute;
+   top: -20px;
+   left: -5px;
+   width: 110px;
+   height: 130px;
+   border-radius:100px 0;
+   transform:rotate(8deg);
+   border: 3px solid white;
+   z-index: -1;
+}
+
+.petal3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(137deg);
+  border: 3px solid white;
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal3:after{
+   content:'';
+   position: absolute;
+   top: -20px;
+   left: -5px;
+   width: 110px;
+   height: 130px;
+   border-radius:100px 0;
+   transform:rotate(8deg);
+   border: 3px solid white;
+   z-index: -1;
+}
+
+.petal4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(220deg);
+  border: 3px solid white;
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal4:after{
+   content:'';
+   position: absolute;
+   top: -20px;
+   left: -5px;
+   width: 110px;
+   height: 130px;
+   border-radius:100px 0;
+   transform:rotate(8deg);
+   border: 3px solid white;
+   z-index: -1;
+}
+
+.flower15{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.7);
+}
+
+.petal-1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal-2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(36deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal-3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(72deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal-4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(108deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal-5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(144deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal-6{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(180deg);
+  border: 3px solid white; 
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal-7{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(216deg);
+  border: 3px solid white; 
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal-8{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(252deg);
+  border: 3px solid white;    
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal-9{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(288deg);
+  border: 3px solid white; 
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.petal-10{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:80px 0;
+  transform-origin:0 100px;
+  transform:rotate(324deg);
+  border: 3px solid white; 
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower16{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.7);
+}
+
+ .petalone{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petaltwo{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(45deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+ .petalthree{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(90deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petalfour{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(135deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petalfive{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(180deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petalsix{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(225deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petalseven{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(270deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+ .petaleight{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(315deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower17{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.8);
+}
+
+ .pe_one{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  border: 3px solid white; 
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_two{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(90deg); 
+  border: 3px solid white; 
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_three{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(180deg);
+  border: 3px solid white; 
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pe_four{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-90deg);
+  border: 3px solid white; 
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower18{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.7);
+}
+
+.pet1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(30deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(60deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(90deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(120deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.pet6{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(150deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet7{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(180deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet8{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(210deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet9{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(240deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet10{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(270deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.pet11{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(300deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet12{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:60px;
+  height:100px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(330deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.flower19{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.8);
+}
+
+.pet-1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  border: 3px solid white; 
+  animation: blooms 2s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.pet-2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(40deg);
+  border: 3px solid white; 
+  animation: blooms 2s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.pet-3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(80deg);
+  border: 3px solid white; 
+  animation: blooms 2s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.pet-4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(120deg);
+  border: 3px solid white; 
+  animation: blooms 2s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.pet-5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(160deg);
+  border: 3px solid white; 
+  animation: blooms 2s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.pet-6{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(200deg);
+  border: 3px solid white; 
+  animation: blooms 2s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.pet-7{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(240deg);
+  border: 3px solid white; 
+  animation: blooms 2s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.pet-8{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(280deg);
+  border: 3px solid white; 
+  animation: blooms 2s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.pet-9{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:80px;
+  height:80px;
+  border-radius:50px 0px;
+  transform-origin:0 100px;
+  transform:rotate(320deg);
+  border: 3px solid white; 
+  animation: blooms 2s linear;
+  animation-timing-function: ease-in-out; 
+}
+
+.flower20{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(1);
+}
+
+.pet_1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(70deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(90deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(150deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_6{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(170deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_7{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(220deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_8{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(240deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_9{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(290deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_10{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 0;
+  transform-origin:0 100px;
+  transform:rotate(310deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower21{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.9);
+}
+
+.pet-one{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  border: 3px solid white;
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet-two{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(50deg);
+  border: 3px solid white;
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet-three{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(100deg);
+  border: 3px solid white;
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet-four{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(150deg);
+  border: 3px solid white;
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet-five{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(200deg);
+  border: 3px solid white;
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet-six{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(250deg);
+  border: 3px solid white;
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet-seven{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 50px;
+  transform-origin:0 100px;
+  transform:rotate(300deg);
+  border: 3px solid white;
+  animation: blooms 1s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower22{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.8);
+}
+
+.pet_one{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(-5deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_one:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   border: 3px solid white;
+}
+
+.pet_two{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(50deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_two:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   border: 3px solid white;
+}
+
+.pet_three{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(100deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_three:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   border: 3px solid white;
+}
+
+.pet_four{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(150deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_four:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   border: 3px solid white;
+}
+
+.pet_five{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(200deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_five:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   border: 3px solid white;
+}
+
+.pet_six{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(250deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_six:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   border: 3px solid white;
+}
+
+.pet_seven{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 10px;
+  transform-origin:0 100px;
+  transform:rotate(300deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.pet_seven:after{
+  content:'';
+   position: absolute;
+   top: 45px;
+   left: -5px;
+   width:50px;
+   height:50px;
+   border-radius:100px 10px;
+   transform-origin:0 100px;
+   transform:rotate(0deg);
+   border: 3px solid white;
+}
+
+.flower23{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.9);
+}
+
+.peta1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:70px 10px;
+  transform-origin:0 100px;
+  transform:rotate(10deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:70px 10px;
+  transform-origin:0 100px;
+  transform:rotate(85deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:70px 10px;
+  transform-origin:0 100px;
+  transform:rotate(160deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:70px 10px;
+  transform-origin:0 100px;
+  transform:rotate(230deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:70px 10px;
+  transform-origin:0 100px;
+  transform:rotate(300deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower24{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(1.2);
+}
+
+.peta-1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(40deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(80deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(120deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(160deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-6{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(200deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-7{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(240deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-8{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(280deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-9{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:50px 20px;
+  transform-origin:0 100px;
+  transform:rotate(320deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower25{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.7);
+}
+
+.peta_1{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta_2{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(40deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta_3{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(80deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta_4{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(120deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta_5{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(160deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta_6{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(200deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta_7{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(240deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta_8{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(280deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta_9{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(320deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta_10{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:40px;
+  height:100px;
+  border-radius:50px 50px;
+  transform-origin:0 100px;
+  transform:rotate(260deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.flower26{
+  position: absolute;
+  width: 15%;
+  height: 30%;
+  transform: scale(0.8);
+}
+
+.peta-one{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(0deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-one:before{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-20deg);
+  border: 3px solid white;
+}
+
+.peta-one:after{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: -25px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  border: 3px solid white;
+}
+
+.peta-two{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(70deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-two:before{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-20deg);
+  border: 3px solid white;
+}
+
+.peta-two:after{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: -25px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  border: 3px solid white;
+}
+
+.peta-three{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(140deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-three:before{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-20deg);
+  border: 3px solid white;
+}
+
+.peta-three:after{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: -25px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  border: 3px solid white;
+}
+
+.peta-four{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(210deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-four:before{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-20deg);
+  border: 3px solid white;
+}
+
+.peta-four:after{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: -25px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  border: 3px solid white;
+}
+
+.peta-five{
+  position: absolute;
+  top: 0;
+  left: 40%;
+  width:100px;
+  height:100px;
+  border-radius:100px 20px;
+  transform-origin:0 100px;
+  transform:rotate(280deg);
+  border: 3px solid white;
+  animation: blooms 3s linear;
+  animation-timing-function: ease-in-out;
+}
+
+.peta-five:before{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(-20deg);
+  border: 3px solid white;
+}
+
+.peta-five:after{
+  content:'';
+  position: absolute;
+  top: 60px;
+  left: -25px;
+  width:30px;
+  height:30px;
+  border-radius:100px 0px;
+  transform-origin:0 100px;
+  transform:rotate(20deg);
+  border: 3px solid white;
+}
+
+@media screen and (max-width: 1400px) {
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 38%;
+  height: 10%;
+}
+
+  }
+
+@media screen and (max-width: 1300px) {
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 40%;
+  height: 10%;
+}
+
+  }
+
+@media screen and (max-width: 1200px) {
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 45%;
+  height: 10%;
+}
+
+  }
+
+@media screen and (max-width: 1100px) {
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 50%;
+  height: 10%;
+}
+
+  }
+
+@media screen and (max-width: 1000px) {
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 55%;
+  height: 10%;
+}
+
+  }
+
+@media screen and (max-width: 900px) {
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 60%;
+  height: 10%;
+}
+
+  }
+
+@media screen and (max-width: 800px) {
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 70%;
+  height: 10%;
+}
+
+  }
+
+@media screen and (max-width: 700px) {
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 80%;
+  height: 10%;
+}
+
+  }
+
+@media screen and (max-width: 600px) {
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 0%;
+  width: 98%;
+  height: 10%;
+}
+
+  }
+
+@media screen and (max-width: 400px) {
+
+.box{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  width: 100%;
+  height: 10%;
+  background-color: black;
+  border-radius: 30px;
+}
+
+.sun {
+  position: absolute;
+  top: 37%;
+  left: 3%;
+}
+
+.sun:hover{
+  transform: scale(3);
+}
+
+.print{
+  color: white;
+  position: absolute;
+  top: 32%;
+  left: 20%;
+}
+
+.print:hover{
+  transform: scale(3);
+}
+
+.refresh {
+  color: white;
+  position: absolute;
+  top: 35%;
+  left: 35%;
+}
+
+.refresh:hover{
+  transform: scale(3);
+}
+
+#result{
+  display:none;
+}
+
+.print:before {
+  background-color: transparent;
+}
+
+.print:after {
+  background-color: transparent;
+}
+
+#keyboard{
+  position: absolute;
+  top: 25%;
+  left: 42%;
+  font-family: 'Coming Soon', cursive;
+  font-size: 30px;
+  text-transform: uppercase;
+  display: block;
+  border: none;
+  animation: move 1s infinite;
+  animation-timing-function: ease-in-out;
+  color: white;
+}
+
+@-webkit-keyframes move
+{
+    0% {transform: scale(1);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+#hiddenInput{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 5%;
+  height: 5%;
+  font-size: 20px;
+}
+
+  }
